@@ -9,6 +9,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
   </head>
 
 <body id="body">
@@ -30,7 +33,8 @@
 
 
 <div id="sections">
-<section class="py-3" id="section1">
+
+<section class="py-3" id="section1" data-aos="fade-up">
   <div class="container">
     <div class="row">
       <div class="col-md-7 mb-4">
@@ -64,7 +68,104 @@
     </div>
   </div>
 </section>
+
+<div class="col-12 text-center">
+  <h2 class="font-weight-light" id="Competences">Compétences</h1>
+</div>
+
+<div class="container">
+  <div class="row" id="rowcompetences">
+    <div class="col-lg-6" data-aos="fade-up">
+      <section class="py-3" id="section2">
+        <div class="col-12 text-center">
+          <h5 class="font-weight-normal" >Techniques</h1>
+          <canvas id="myChart1" width="300" height="300"></canvas>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-6" data-aos="fade-up">
+      <section class="py-3" id="section2">
+        <div class="col-12 text-center">
+          <h5 class="font-weight-normal" >Métiers</h1>
+          <canvas id="myChart2" width="300" height="300"></canvas>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
 </div>
 
 </body>
 </html>
+
+<script>
+  var ctx2 = document.getElementById('myChart2');
+  var myRadarChart = new Chart(ctx2, {
+    type: 'radar',
+    data: {
+      labels: ['Communication', 'Rédaction', 'Anglais', 'Adaptabilité', 'Créativité', 'Initiative','Gestion projet','Leadership',"Esprit d'équipe"],
+      datasets: [{
+        label: "Niveau",
+        data: [7, 6.5, 9, 10, 7.5, 4, 5, 6, 8],
+        backgroundColor: 'rgba(0, 86, 186, 0.4)',
+        borderColor: 'rgba(0, 86, 186, 1))',
+        borderJoinStyle: 'round',
+        borderWidth: "2",
+        pointRadius: 3,
+        pointBackgroundColor: 'rgba(0, 33, 71, 1)',
+        lineTension: 0.1
+      }
+    ]
+    },
+    options: {
+      scale: {
+        ticks:{
+          beginAtZero: true,
+          max: 10
+        }
+      }
+    }
+  });
+
+  var ctx1 = document.getElementById('myChart1');
+  var myBarChart = new Chart(ctx1, {
+      type: 'horizontalBar',
+      data: {
+          labels: ['C++','Java','Javascript','Golang','Python','C','Windows','Linux','VMWare','Réseau','Android','Web frontend','Web backend'],
+          datasets: [{
+              label: "Niveau",
+              data : [5.5,4,8,6.5,5,4,9,3.5,6,2,5,8,6],
+              backgroundColor: 'rgba(0, 86, 186, 0.4)',
+              borderColor:'rgba(0, 33, 71, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+        scales: {
+        xAxes: [{
+            ticks: {
+                display: false,
+                beginAtZero: true,
+                max: 10
+            },
+            gridLines: {
+               display:false,
+               drawBorder: false
+            },
+            barThickness : 73
+          }],
+        yAxes: [{
+            gridLines: {
+               display:false,
+               drawBorder: false
+            }
+          }]
+        }
+      }
+  });
+
+  AOS.init({
+  duration: 1200,
+})
+</script>
