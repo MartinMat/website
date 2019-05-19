@@ -106,13 +106,13 @@
     data: {
       labels: ['Communication', 'Rédaction', 'Anglais', 'Adaptabilité', 'Créativité', 'Initiative','Gestion projet','Leadership',"Esprit d'équipe"],
       datasets: [{
-        label: "Niveau",
+        label: "Niveau (sur 10)",
         data: [7, 6.5, 9, 10, 7.5, 4, 5, 6, 8],
         backgroundColor: 'rgba(0, 86, 186, 0.4)',
         borderColor: 'rgba(0, 86, 186, 1))',
         borderJoinStyle: 'round',
         borderWidth: "2",
-        pointRadius: 3,
+        pointRadius: 4,
         pointBackgroundColor: 'rgba(0, 33, 71, 1)',
         lineTension: 0.1
       }
@@ -120,6 +120,7 @@
     },
     options: {
       scale: {
+        pointLabels: { fontSize: 11 },
         ticks:{
           beginAtZero: true,
           max: 10
@@ -134,7 +135,7 @@
       data: {
           labels: ['C++','Java','Javascript','Golang','Python','C','Windows','Linux','VMWare','Réseau','Android','Web frontend','Web backend'],
           datasets: [{
-              label: "Niveau",
+              label: "Niveau (sur 10)",
               data : [5.5,4,8,6.5,5,4,9,3.5,6,2,5,8,6],
               backgroundColor: 'rgba(0, 86, 186, 0.4)',
               borderColor:'rgba(0, 33, 71, 1)',
@@ -143,23 +144,26 @@
       },
       options: {
         scales: {
-        xAxes: [{
-            ticks: {
-                display: false,
-                beginAtZero: true,
-                max: 10
-            },
-            gridLines: {
-               display:false,
-               drawBorder: false
-            },
-            barThickness : 73
+          xAxes: [{
+              ticks: {
+                  display: false,
+                  beginAtZero: true,
+                  max: 10
+                },
+              gridLines: {
+                display:false,
+                drawBorder: false
+              }
           }],
-        yAxes: [{
-            gridLines: {
-               display:false,
-               drawBorder: false
-            }
+          yAxes: [{
+              gridLines: {
+                display:false,
+                drawBorder: false
+              },
+              ticks: {
+                  fontSize: 13,
+                  fontStyle: "bold"
+                },
           }]
         }
       }
