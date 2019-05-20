@@ -156,7 +156,7 @@
 ul {
     list-style: none;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 80px;
     padding-left: 0px;
 }
 
@@ -198,7 +198,7 @@ ul {
 .timeline > li > .timeline-panel {
   width: 46%;
   float: left;
-  
+
   border-radius: 5px;
   padding: 20px;
   position: relative;
@@ -263,7 +263,7 @@ ul {
 }
 .timeline-title {
   margin-top: 0;
-  color: inherit;
+  color: #002147;
 }
 .timeline-body > p,
 .timeline-body > ul {
@@ -271,4 +271,16 @@ ul {
 }
 .timeline-body > p + p {
   margin-top: 5px;
+}
+
+.text-muted{
+  color: rgba(0, 86, 186, 1)!important;
+}
+
+.formation:before{
+    background-color: rgba(0, 86, 186, 1);
+}
+
+.formation > li > .timeline-badge {
+  background-color: rgba(0, 86, 186, 1);
 }
