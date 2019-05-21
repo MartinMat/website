@@ -42,7 +42,7 @@
         <p id="presentation">Jeune récemment diplômé de l'ENIB, je cherche à me construire un socle de compétences et d'expériences pour supporter ma carrière professionnelle. Rigoureux, curieux et ouvert, j'essaye toujours d'être une plus-value pour mon équipe. L'informatique est ma vocation, mais je me passionne pour beaucoup de sujets différents, tels que la musique, la photographie ou la cuisine pour en citer quelques-uns. </p>
         <span style="margin:auto; display:table;">
           <button href="#" class="button hvr-float-shadow" id="button1">Télécharger CV</button>
-          <button type="button" class="button hvr-float-shadow" id="button2">Me contacter</button>
+          <button type="button" class="button hvr-float-shadow" id="button2"  onclick="smoothScroll(document.getElementById('Contact'))">Me contacter</button>
         </span>
       </div>
       <div class="col-md-5">
@@ -57,7 +57,7 @@
           </div>
           <div class="col-7">
             <p id="answer">26/07/1994</p>
-            <p id="answer">Consultant LR Technologies</p>
+            <p id="answer"><a href="" id="url">Consultant LR Technologies</a></p>
             <p id="answer">Français</p>
             <p id="answer">100 rue Hoche 29200 Brest</p>
             <p id="answer"><a href="tel:0664720461" id="url">+33 6 64 72 04 61</a></p>
@@ -210,6 +210,51 @@
 
 </div>
 
+<footer class="page-footer font-small" style="background-color: #003b80; padding-top:50px">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center" style="margin:auto; display:table;">
+          <a class="fb-ic" style="padding-right:20px">
+            <svg onClick="location.href='https://www.linkedin.com/in/martin-matavka-16499b106/'" class="button hvr-float-shadow" id="linkedin" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="48" height="48"
+            viewBox="0 0 192 192"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,192v-192h192v192z" fill="none"></path><g id="Layer_1" fill="#ffffff"><path d="M33.684,56h0.208v0c11.16,0 18.108,-8 18.108,-18c-0.208,-10.22 -6.948,-18 -17.896,-18c-10.948,0 -18.104,7.78 -18.104,18c0,10 6.944,18 17.684,18z"></path><rect x="4" y="17" transform="scale(4,4)" width="9" height="26"></rect><path d="M176,106c0,-20.988 -17.012,-38 -38,-38c-12.212,0 -23.048,5.784 -30,14.736v-14.736h-36v104h36v-60v0c0,-8.836 7.164,-16 16,-16c8.836,0 16,7.164 16,16v60h36c0,0 0,-60.18 0,-66z"></path></g></g></svg>
+          </a>
+          <a class="ins-ic">
+            <svg onClick="location.href='https://github.com/MartinMat'" class="button hvr-float-shadow"  id="git" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 192 192"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,192v-192h192v192z" fill="none"></path><g fill="#ffffff"><path d="M96,19.2c-42.4128,0 -76.8,34.3872 -76.8,76.8c0,35.9872 24.7808,66.0992 58.1888,74.432c-0.3584,-1.0368 -0.5888,-2.24 -0.5888,-3.7312v-13.1264c-3.1168,0 -8.3392,0 -9.6512,0c-5.2544,0 -9.9264,-2.2592 -12.192,-6.4576c-2.5152,-4.6656 -2.9504,-11.8016 -9.184,-16.1664c-1.8496,-1.4528 -0.4416,-3.1104 1.6896,-2.8864c3.936,1.1136 7.2,3.8144 10.272,7.8208c3.0592,4.0128 4.4992,4.9216 10.2144,4.9216c2.7712,0 6.9184,-0.16 10.8224,-0.7744c2.0992,-5.3312 5.728,-10.24 10.1632,-12.5568c-25.5744,-2.6304 -37.7792,-15.3536 -37.7792,-32.6272c0,-7.4368 3.168,-14.6304 8.5504,-20.6912c-1.7664,-6.016 -3.9872,-18.2848 0.6784,-22.9568c11.5072,0 18.464,7.4624 20.1344,9.4784c5.7344,-1.9648 12.032,-3.0784 18.6496,-3.0784c6.6304,0 12.9536,1.1136 18.7008,3.0912c1.6512,-2.0032 8.6144,-9.4912 20.1472,-9.4912c4.6848,4.6784 2.4384,16.9984 0.6528,23.0016c5.3504,6.048 8.4992,13.2224 8.4992,20.6464c0,17.2608 -12.1856,29.9776 -37.7216,32.6208c7.0272,3.6672 12.1536,13.9712 12.1536,21.7344v17.4976c0,0.6656 -0.1472,1.1456 -0.224,1.7152c29.9264,-10.4896 51.424,-38.9056 51.424,-72.416c0,-42.4128 -34.3872,-76.8 -76.8,-76.8z"></path></g></g></svg>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="background-color: #002147; color: white">© 2019 Copyright: Martin Matavka. Hosted on my own
+    <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/" > Raspberry PI 3.</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
 </body>
 
 </html>
@@ -287,4 +332,27 @@
   AOS.init({
   duration: 1200,
 })
+
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 25);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
 </script>

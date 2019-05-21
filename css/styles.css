@@ -284,3 +284,5 @@ ul {
 .formation > li > .timeline-badge {
   background-color: rgba(0, 86, 186, 1);
 }
+
+button:focus {outline:0;}
