@@ -41,7 +41,7 @@
         <h2 class="font-weight-normal" id="TitreFondBlanc"><strong>Bonjour ! Je m'appelle Martin Matavka </strong></h2>
         <p id="presentation">Jeune récemment diplômé de l'ENIB, je cherche à me construire un socle de compétences et d'expériences pour supporter ma carrière professionnelle. Rigoureux, curieux et ouvert, j'essaye toujours d'être une plus-value pour mon équipe. L'informatique est ma vocation, mais je me passionne pour beaucoup de sujets différents, tels que la musique, la photographie ou la cuisine pour en citer quelques-uns. </p>
         <span style="margin:auto; display:table;">
-          <button href="#" class="button hvr-float-shadow" id="button1">Télécharger CV</button>
+          <button onClick="location.href='download/CVMartinMatavka.pdf'"  target="_blank" class="button hvr-float-shadow" id="button1">Télécharger CV</button>
           <button type="button" class="button hvr-float-shadow" id="button2"  onclick="smoothScroll(document.getElementById('Contact'))">Me contacter</button>
         </span>
       </div>
@@ -57,7 +57,7 @@
           </div>
           <div class="col-7">
             <p id="answer">26/07/1994</p>
-            <p id="answer"><a href="" id="url">Consultant LR Technologies</a></p>
+            <p id="answer"><a href="https://lrtechnologies.fr/fr/" target="_blank" id="url">Consultant LR Technologies</a></p>
             <p id="answer">Français</p>
             <p id="answer">100 rue Hoche 29200 Brest</p>
             <p id="answer"><a href="tel:0664720461" id="url">+33 6 64 72 04 61</a></p>
@@ -249,7 +249,7 @@ style=" fill:#000000; cursor: pointer;"><g fill="none" fill-rule="nonzero" strok
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3" style="background-color: #002147; color: white">© 2019 Copyright: Martin Matavka. Hosted on my own
-    <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/" > Raspberry PI 3.</a>
+    <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/" target="_blank"> Raspberry PI 3.</a>
   </div>
   <!-- Copyright -->
 
@@ -267,7 +267,7 @@ style=" fill:#000000; cursor: pointer;"><g fill="none" fill-rule="nonzero" strok
       labels: ['Communication', 'Rédaction', 'Anglais', 'Adaptabilité', 'Créativité', 'Initiative','Gestion projet','Leadership',"Esprit d'équipe"],
       datasets: [{
         label: "Niveau (sur 10)",
-        data: [7, 6.5, 9, 10, 7.5, 4, 5, 6, 8],
+        data: [8, 6.5, 9, 10, 7.5, 5.5, 5, 6, 8],
         backgroundColor: 'rgba(0, 86, 186, 0.4)',
         borderColor: 'rgba(0, 86, 186, 0.7)',
         borderJoinStyle: 'round',
@@ -293,10 +293,10 @@ style=" fill:#000000; cursor: pointer;"><g fill="none" fill-rule="nonzero" strok
   var myBarChart = new Chart(ctx1, {
       type: 'horizontalBar',
       data: {
-          labels: ['C++','Java','Javascript','Golang','Python','C','Windows','Linux','VMWare','Réseau','Android','Web frontend','Web backend'],
+          labels: ['C++','C', 'Java','Javascript','Golang','Python','Windows','Linux','VMWare','Réseau','Android','Web frontend','Web backend'],
           datasets: [{
               label: "Niveau (sur 10)",
-              data : [5.5,4,8,6.5,5,4,9,3.5,6,2,5,8,6],
+              data : [5.5,4,4,8,6.5,5,9,3.5,6,2,5,8,6],
               backgroundColor: 'rgba(0, 86, 186, 0.4)',
               borderColor:'rgba(0, 33, 71, 1)',
               borderWidth: 1
