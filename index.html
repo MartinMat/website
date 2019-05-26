@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
     <script src="node_modules/chart.js/dist/Chart.js"></script>
     <script src="node_modules/aos/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("user_P4BYRgiRA2uyftgWHtYse");
+      })();
+    </script>
   </head>
 
 <body id="body">
@@ -190,21 +196,24 @@
 <section class="py-3" id="section1" data-aos="fade-up" style="margin-top:-50px">
   <div class="container">
   <h2 class="font-weight-normal" id="TitreFondBlanc" style="margin-bottom:30px"><strong>Envie de me contacter ?</strong></h2>
-  <form>
+  <div id="messagemail"></div>
+  <form id="contactform">
   <div class="form-group">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Votre nom">
+    <input type="text" class="form-control" id="nominput" placeholder="Votre nom" required="required">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Votre email">
+    <input type="email" class="form-control" id="emailinput" placeholder="Votre email" required="required" data-error="Valid email is required.">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Objet">
+    <input type="text" class="form-control" id="objetinput" placeholder="Objet" required="required">
   </div>
   <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Votre message"></textarea>
+    <textarea class="form-control" id="messageinput" rows="5" placeholder="Votre message" required="required"></textarea>
   </div>
-  <button href="#" class="button hvr-float-shadow" id="button1">Envoyer !</button>
+  <button type="submit" class="button hvr-float-shadow" id="button1">Envoyer !</button>
+
 </form>
+
 </div>
 </section>
 
@@ -260,6 +269,7 @@ style=" fill:#000000; cursor: pointer;"><g fill="none" fill-rule="nonzero" strok
 </html>
 
 <script>
+
   var ctx2 = document.getElementById('myChart2');
   var myRadarChart = new Chart(ctx2, {
     type: 'radar',
@@ -354,5 +364,46 @@ window.smoothScroll = function(target) {
     }
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+var name;
+var email;
+var object;
+var message;
+
+$(document).ready(function () {
+    $('#contactform').on('submit', function(e) {
+      console.log("test")
+        name = document.getElementById("nominput").value;
+        email =document.getElementById("emailinput").value;
+        object =document.getElementById("objetinput").value;
+        message = document.getElementById("messageinput").value;
+        e.preventDefault();
+        sendmail(name, email, object, message);
+        document.getElementById("nominput").value ="";
+        document.getElementById("emailinput").value ="";
+        document.getElementById("objetinput").value ="";
+        document.getElementById("messageinput").value ="";
+      });
+  });
+
+
+function sendmail(name, email, object, message){
+  var templateParams = {
+      from_name: name,
+      from_email: email,
+      from_object: object,
+      message_html: message
+  };
+
+  emailjs.send('gmail', 'template_JlxZ5DDr', templateParams)
+      .then(function(response) {
+        var alertBox = '<div class="alert ' + 'alert-success' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Votre message a bien été envoyé. Je vous répondrai aussitôt que possible !' + '</div>';
+        document.getElementById('messagemail').innerHTML=alertBox;
+      }, function(error) {
+         console.log('FAILED...', error);
+         var alertBox = '<div class="alert ' + 'alert-error' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + "Oups... Il semblerait qu'une erreur ce soit produite. Veuillez réessayer ultérieurement." + '</div>';
+         document.getElementById('messagemail').innerHTML=alertBox;
+      });
 }
 </script>
