@@ -210,7 +210,7 @@
   <div class="form-group">
     <textarea class="form-control" id="messageinput" rows="5" placeholder="Votre message" required="required"></textarea>
   </div>
-  <button type="submit" class="button hvr-float-shadow" id="button1">Envoyer !</button>
+  <span><button type="submit" class="button hvr-float-shadow" id="button1">Envoyer !</button><span id="loading"></span></span>
 
 </form>
 
@@ -384,6 +384,8 @@ $(document).ready(function () {
         document.getElementById("emailinput").value ="";
         document.getElementById("objetinput").value ="";
         document.getElementById("messageinput").value ="";
+        var loading = "<img src='images/gear-4.5s-30px.svg'></img>"
+        document.getElementById('loading').innerHTML=loading;
       });
   });
 
@@ -400,10 +402,12 @@ function sendmail(name, email, object, message){
       .then(function(response) {
         var alertBox = '<div class="alert ' + 'alert-success' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Votre message a bien été envoyé. Je vous répondrai aussitôt que possible !' + '</div>';
         document.getElementById('messagemail').innerHTML=alertBox;
+        document.getElementById('loading').innerHTML="";
       }, function(error) {
          console.log('FAILED...', error);
          var alertBox = '<div class="alert ' + 'alert-error' + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + "Oups... Il semblerait qu'une erreur ce soit produite. Veuillez réessayer ultérieurement." + '</div>';
          document.getElementById('messagemail').innerHTML=alertBox;
+         document.getElementById('loading').innerHTML="";
       });
 }
 </script>
