@@ -148,6 +148,23 @@
   background-color: #cccccc;
 }
 
+#button3{
+  background-color: #002147;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: white;
+  height: 60px;
+  width: 150px;
+  margin-top: 15px;
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#button3:hover{
+  background-color: #001036;
+}
+
 #rowcompetences{
   max-width: 1040px;
   margin: auto;

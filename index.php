@@ -99,7 +99,7 @@ $conn->close();
     <div class="col-lg-6" data-aos="fade-up">
       <section class="py-3" id="section2">
         <div class="col-12 text-center">
-          <h5 class="font-weight-normal" >Métiers</h1>
+          <h5 class="font-weight-normal" >Métier</h1>
           <canvas id="myChart2" width="300" height="300"></canvas>
         </div>
       </section>
